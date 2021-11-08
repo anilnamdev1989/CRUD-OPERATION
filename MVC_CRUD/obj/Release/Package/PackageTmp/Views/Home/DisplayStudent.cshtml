@@ -1,0 +1,51 @@
+﻿@model IEnumerable<BO.Student>
+
+@{
+    ViewBag.Title = "DisplayStudent";
+}
+
+<h1>Display Student</h1>
+
+<table class="table">
+    <tr>
+        <th>@Html.DisplayName("Name")</th>
+        <th>@Html.DisplayNameFor(dp => dp.DepName)</th>
+        <th>@Html.DisplayNameFor(dob => dob.DOB)</th>
+        <th>@Html.DisplayNameFor(ph => ph.Phone)</th>
+        <th>@Html.DisplayNameFor(em => em.Email)</th>
+        <th>@Html.DisplayNameFor(gen => gen.Gender)</th>
+        <th>@Html.DisplayNameFor(add => add.Address)</th>
+        <th>@Html.DisplayNameFor(ct => ct.CityName),@Html.DisplayNameFor(st => st.StateName)</th>
+        <th>@Html.DisplayNameFor(uni=>uni.UniversityName)</th>
+        <th>@Html.DisplayNameFor(hby=>hby.Hobbies)</th>
+        <th>@Html.DisplayNameFor(picn=>picn.ProfilePicName)</th>
+        <th>@Html.DisplayNameFor(resume=>resume.ResumeName)</th>
+     
+
+    </tr>
+    @foreach (BO.Student obj in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(fn => obj.FName)&nbsp;@Html.DisplayFor(ln => obj.LName)</td>
+            <td>@Html.DisplayFor(dp => obj.DepName)</td>
+            @*<td>@Html.DisplayFor(dob => obj.DOB)</td>*@
+            <td> @obj.DOB.ToString("dd'/'MM'/'yyyy")</td>
+
+            <td>@Html.DisplayFor(ph => obj.Phone)</td>
+            <td>@Html.DisplayFor(em => obj.Email)</td>
+            <td>@Html.DisplayFor(gen => obj.Gender)</td>
+            <td>@Html.DisplayFor(add => obj.Address)</td>
+            <td>@Html.DisplayFor(ct => obj.CityName),@Html.DisplayFor(st => obj.StateName)</td>
+            <td>@Html.DisplayFor(uni=>obj.UniversityName)</td>
+            <td>@Html.DisplayFor(hby=>obj.Hobbies)</td>
+            <td>
+            <img src="https://bsite.net/anilnamdev/ProfilePicture/@obj.ProfilePicName" with="50" height="50" />
+            </td>
+            <td>
+                <a href="https://bsite.net/anilnamdev/ResumeFile/@obj.ResumeName">Click here</a>
+            </td>
+            <td>@Html.ActionLink("Edit","Edit",new { id = obj.StudentID })</td>
+            <td>@Html.ActionLink("Delete","Delete",new {id= obj.StudentID})</td>
+        </tr>
+    }
+</table>
