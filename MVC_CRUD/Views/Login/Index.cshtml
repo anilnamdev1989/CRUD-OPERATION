@@ -1,0 +1,53 @@
+﻿@model BO.Login  
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=1,initial-scale=1,user-scalable=1" />
+    <title>Login Form</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:100italic,100,300italic,300,400italic,400,700italic,700,900italic,900" rel="stylesheet" type="text/css">
+    <link href="~/Content/styles.css" rel="stylesheet" />
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    
+    <section class="container">
+        <section class="login-form">
+            <form method="post" action="/Login/Index" role="login">
+                <h2>Please sign in</h2>
+                <p>To enter in your private dashboard</p>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon"><span class="text-primary glyphicon glyphicon-envelope"></span></div>
+                        @*<input type="email" name="email" placeholder="Email address" required class="form-control" />*@
+                        @Html.TextBoxFor(email=>email.Email,new { @class = "form-control", id = "txtemail ", type = "email", placeholder = "Email address" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon"><span class="text-primary glyphicon glyphicon-lock"></span></div>
+                        @*<input type="password" name="password" placeholder="Password" required class="form-control" />*@
+                        @Html.PasswordFor(pass =>pass.Password, new {@class="form-control",id="txtpass",placeholder="Password"})
+                    </div>
+                </div>
+                <button type="submit" name="go" class="btn btn-block btn-success">Sign in</button>
+            </form>
+        </section>
+    </section>
+
+</body>
+</html>

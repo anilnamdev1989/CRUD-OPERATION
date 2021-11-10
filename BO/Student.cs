@@ -36,6 +36,7 @@ namespace BO
         [Required(ErrorMessage = "DOB  is Required")]
         public DateTime DOB { get; set; }
         [Required(ErrorMessage = "Email  is Required")]
+        [RegularExpression(@"^\S+@\S+\.\S+$",ErrorMessage ="Please enter valid email")]
         public string Email { get; set; }
         [Required(ErrorMessage = "Phone Number  is Required")]
         [RegularExpression("[1-9]{1}[0-9]{9}",ErrorMessage ="Invalid Input")]
@@ -67,9 +68,9 @@ namespace BO
         public string ProfilePicName { get; set; }
         [DisplayName("Resume")]
         public string ResumeName { get; set; }
-        [RegularExpression(@"([a-zA-Z0-9\s_\\.\-:])+(.png|.jpg|.jpeg)$", ErrorMessage = "Only Image files allowed.")]
+        [RegularExpression(@"([a-zA-Z0-9\s_\\.\-:])+(.png|.jpg|.jpeg)$", ErrorMessage = "Only Image (.jpeg .jpg .png) files allowed.")]
         public HttpPostedFileBase Image_File { get; set; }
-        [RegularExpression(@"([a-zA-Z0-9\s_\\.\-:])+(.doc|.docx|.pdf)$", ErrorMessage = "Only Valid files allowed.")]
+        [RegularExpression(@"([a-zA-Z0-9\s_\\.\-:])+(.doc|.docx|.pdf)$", ErrorMessage = "Only valid (.doc .docx .pdf) files allowed.")]
 
         public HttpPostedFileBase Resume_File { get; set; }
 
