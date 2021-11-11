@@ -1,4 +1,4 @@
-﻿@model BO.Login  
+﻿@model BO.User  
 @{
     Layout = null;
 }
@@ -17,6 +17,9 @@
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @{
+        @Scripts.Render("~/bundles/jqueryval")
+    }
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -34,15 +37,19 @@
                     <div class="input-group">
                         <div class="input-group-addon"><span class="text-primary glyphicon glyphicon-envelope"></span></div>
                         @*<input type="email" name="email" placeholder="Email address" required class="form-control" />*@
-                        @Html.TextBoxFor(email=>email.Email,new { @class = "form-control", id = "txtemail ", type = "email", placeholder = "Email address" })
+                        @Html.TextBoxFor(email => email.Email, new { @class = "form-control", id = "txtemail ", type = "email", placeholder = "Email address" })
                     </div>
+                    @Html.ValidationMessageFor(email => email.Email, "", new { @class = "text-danger" })
+
                 </div>
                 <div class="form-group">
                     <div class="input-group">
                         <div class="input-group-addon"><span class="text-primary glyphicon glyphicon-lock"></span></div>
                         @*<input type="password" name="password" placeholder="Password" required class="form-control" />*@
-                        @Html.PasswordFor(pass =>pass.Password, new {@class="form-control",id="txtpass",placeholder="Password"})
+                        @Html.PasswordFor(pass => pass.Password, new { @class = "form-control", id = "txtpass", placeholder = "Password",@maxlenghth=10 })
                     </div>
+                    @Html.ValidationMessageFor(pass => pass.Password, "", new { @class = "text-danger" })
+
                 </div>
                 <button type="submit" name="go" class="btn btn-block btn-success">Sign in</button>
             </form>

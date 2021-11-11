@@ -11,12 +11,12 @@ namespace MVC_CRUD.Controllers
         // GET: Login
         public ActionResult Index()
         {
-            BO.Login objLogin = new BO.Login();
+            BO.User objUser = new BO.User();
 
-            return View(objLogin);
+            return View(objUser);
         }
         [HttpPost]
-        public string Index(BO.Login objLogin)
+        public string Index(BO.User objUser)
         {
             return "hello";
         }

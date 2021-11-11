@@ -17,3 +17,4 @@ C:\Users\Dell\source\repos\MVC_CRUD\BO\obj\Debug\BO.csproj.CoreCompileInputs.cac
 C:\Users\Dell\source\repos\MVC_CRUD\BO\obj\Debug\BO.csproj.CopyComplete
 C:\Users\Dell\source\repos\MVC_CRUD\BO\obj\Debug\BO.dll
 C:\Users\Dell\source\repos\MVC_CRUD\BO\obj\Debug\BO.pdb
+C:\Users\Dell\source\repos\MVC_CRUD\BO\obj\Debug\BO.csproj.AssemblyReference.cache
