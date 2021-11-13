@@ -46,12 +46,14 @@
                     <div class="input-group">
                         <div class="input-group-addon"><span class="text-primary glyphicon glyphicon-lock"></span></div>
                         @*<input type="password" name="password" placeholder="Password" required class="form-control" />*@
-                        @Html.PasswordFor(pass => pass.Password, new { @class = "form-control", id = "txtpass", placeholder = "Password",@maxlenghth=10 })
+                        @Html.PasswordFor(pass => pass.Password, new { @class = "form-control", id = "txtpass", placeholder = "Password", @maxlength = 10 })
                     </div>
                     @Html.ValidationMessageFor(pass => pass.Password, "", new { @class = "text-danger" })
 
                 </div>
-                <button type="submit" name="go" class="btn btn-block btn-success">Sign in</button>
+                <button type="submit" name="button" value="Login" class="btn btn-block btn-success">Sign in</button>
+                <button type="submit" name="button" value="NewRegs" class="btn btn-block btn-success"> Create an Account</button>
+
             </form>
         </section>
     </section>

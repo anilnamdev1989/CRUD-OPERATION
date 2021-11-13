@@ -16,8 +16,19 @@ namespace MVC_CRUD.Controllers
             return View(objUser);
         }
         [HttpPost]
-        public string Index(BO.User objUser)
+        public string Index(BO.User objUser, string button )
         {
+            if(ModelState.IsValid)
+            {
+                if(button=="Login")
+                {
+
+                }
+                else
+                {
+
+                }
+            }
             return "hello";
         }
     }
